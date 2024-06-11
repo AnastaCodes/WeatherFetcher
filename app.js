@@ -1,9 +1,9 @@
 let api = "APIKEY";
 
 const mainContainer = document.querySelector(".main-container");
-firstStep();
+inputCity();
 
-function firstStep() {
+function inputCity() {
   mainContainer.innerHTML = "";
   mainContainer.innerHTML = `
   <form action="" id="find">
@@ -17,10 +17,7 @@ function firstStep() {
     event.preventDefault();
     let cityName = document.querySelector("#add").value.trim();
 
-
-    if (cityName === "") {
-    return;
-    } else {
+    if (cityName != "") {
       getData(cityName);
     }
   });
@@ -31,15 +28,15 @@ async function getData(cityName) {
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${api}&units=metric`
   );
   const data = await weather.json();
-  console.log(data);
+
   if (data.cod === "404") {
-    thirdStep();
+    errorPage();
   } else {
-    secondStep(data);
+    getWeather(data);
   }
 }
 
-function secondStep(data) {
+function getWeather(data) {
   const name = data.name;
   const temp = Math.ceil(data.main.temp);
   const description = data.weather[0].description;
@@ -57,26 +54,26 @@ function secondStep(data) {
 
   changeCity.addEventListener("click", function (event) {
     event.preventDefault();
-    firstStep();
+    inputCity();
   });
 
   /*test.addEventListener("click", function (event) {
     event.preventDefault();
-    thirdStep();
+    errorPage();
   });*/
 }
 
-function thirdStep() {
+function errorPage() {
   mainContainer.innerHTML = "";
   mainContainer.innerHTML = `
 <div class="step-3"> 
-<h1>UPS! ERROR! HAHA!</h1>
+<h1>ERROR!</h1>
 <button id="try-again">Try again</button>
 </div>
 `;
   const tryAgain = document.querySelector("#try-again");
   tryAgain.addEventListener("click", function (event) {
     event.preventDefault();
-    firstStep();
+    inputCity();
   });
 }
