@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Inter;
+  font-weight: 300;
+  background: linear-gradient(151deg, #8e2de2 0, #4a00e0 100%);
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1,
+input[type="text"] {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.degrees,
+.condition,
+#change {
+  text-align: center;
+}
+.degrees {
+  color: #fff;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+/*.degrees:after{content: "℃";}*/
+
+.condition {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 36px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+#change,
+#test {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: 17px;
+
+  font-weight: 400;
+  line-height: 28px; /* 164.706% */
+  text-decoration-line: underline;
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+input[type="text"] {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  background: transparent;
+  border: 0;
+  min-width: 326px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+input[type="text"]:focus-visible {
+  outline: 0;
+  border-bottom: 2px solid #fff;
+}
+
+input[type="submit"],
+#try-again {
+  color: #4c01e0;
+  margin-top: 40px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  width: 140px;
+  height: 48px;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+input[type="submit"]:hover,
+#try-again:hover {
+  background: rgba(255, 255, 255, 0.75);
+  color: #1c0d3a;
+}
+#try-again {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+#find {
+  display: grid;
+}
+
+.title-container {
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.main-container {
+  height: calc(100% - 20vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  text-align: center;
+  margin-bottom: 5vh;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.picture{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background: #ffffff94;
+  border-radius: 27px;
+  margin-bottom: 20px;
+}
