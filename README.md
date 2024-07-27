@@ -1,8 +1,8 @@
-# Weather Now
+# Weather Fetcher
 
 ## Description
 
-Weather Now is a straightforward weather application that allows users to get current weather information for any specified city. The application uses the OpenWeatherMap API and Geo API to fetch and display weather data, including temperature, weather condition, and an icon representing the current weather.
+Weather Fetcher is a straightforward weather application that allows users to get current weather information for any specified city. The application uses the OpenWeatherMap API and Geo API to fetch and display weather data, including temperature, weather condition, and an icon representing the current weather.
 
 ## Features
 
