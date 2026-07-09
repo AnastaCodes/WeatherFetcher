@@ -1,41 +1,35 @@
 # Weather Fetcher
 
-## Description
+**A minimal weather app: type a city, get the current conditions — with IP-based location fallback.**
 
-Weather Fetcher is a straightforward weather application that allows users to get current weather information for any specified city. The application uses the OpenWeatherMap API and Geo API to fetch and display weather data, including temperature, weather condition, and an icon representing the current weather.
+**[Live page](https://anastacodes.github.io/WeatherFetcher/)** · *Note: the hosted page ships without API keys, so data fetching only works when you run it locally with your own keys (see below).*
 
 ## Features
 
-- Input a city name to get the current weather.
-- Displays temperature, weather condition, and weather icon.
-- Uses the OpenWeatherMap API for real-time weather data.
-- Simple and user-friendly interface.
+- Search current weather for any city
+- Auto-detects your location via browser geolocation, falling back to IP lookup
+- Shows temperature, conditions and a weather icon
+- Built with vanilla HTML, CSS and JavaScript (ES modules)
 
-## Demo
+## Run locally
 
-You can use the application [here](https://anastacodes.github.io/WeatherFetcher/).
-
-## API Keys
-
-The API keys for OpenWeatherMap and Geo API are stored in a separate file named `apikey.js`, which is not included in the repository for security reasons. You need to create this file in the `js` directory with the following content:
+1. Clone the repository and create an `apikey.js` file **in the project root** (it is deliberately git-ignored):
 
 ```javascript
 export const apiOpenweathermap = 'YOUR_OPENWEATHERMAP_API_KEY_HERE';
-export const apiGeo = 'YOUR_GEO_API_KEY_HERE';
+export const apiGeo = 'YOUR_IPIFY_API_KEY_HERE';
 ```
 
-## Technologies Used
+2. Serve the folder (ES modules don't load from `file://`):
 
-- HTML
-- CSS
-- JavaScript
-- OpenWeatherMap API
-- Geo API
+```bash
+npx serve .
+```
+
+## Security note
+
+API keys are kept out of the repository and its entire git history. The follow-up projects [AdvancedWeatherFetcher](https://github.com/AnastaCodes/AdvancedWeatherFetcher) + [WeatherProxyServer](https://github.com/AnastaCodes/WeatherProxyServer) solve this properly: the keys move to a server-side PHP proxy so the client never sees them.
 
 ## Acknowledgments
 
-- Thanks to OpenWeatherMap for the weather API.
-
-## Contact
-
-If you have any questions or suggestions, please feel free to reach out.
+- Weather data by [OpenWeatherMap](https://openweathermap.org/), IP lookup by [ipify](https://www.ipify.org/).
