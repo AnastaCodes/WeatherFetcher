@@ -21,17 +21,15 @@ async function currentLocation(lat, lon) {
 }
 
 let error = function () {
-  console.log("error");
   fetch("https://api.ipify.org/?format=json")
     .then((response) => response.json())
     .then((data) => getIp(data))
-    .catch(errorPage());
+    .catch(errorPage);
 };
 
 navigator.geolocation.getCurrentPosition(success, error);
 
 function getIp(json) {
-  console.log(json.ip);
   fetch(
     `https://geo.ipify.org/api/v2/country,city?apiKey=${apiGeo}&ipAddress=${json.ip}`
   )
@@ -61,7 +59,7 @@ function inputCity() {
 
 async function getData(cityName) {
   const weather = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${api}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiOpenweathermap}&units=metric`
   );
   const data = await weather.json();
 
